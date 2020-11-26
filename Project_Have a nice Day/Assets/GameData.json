@@ -1,0 +1,30 @@
+{
+    "StageNumber": 1,
+    "StationNumber": 1,
+    "CharacterNumber": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "IllustrationNumber": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "NumberOfIllustration": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "bgmVol": 0.0,
+    "effectVol": 0.1371428668498993
+}
