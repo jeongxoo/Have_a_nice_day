@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     public void GetScore()
     {
-        if (gameData.StationNumber <= 10 && gameData.StageNumber < 4) // Station은 10이하, Stage는 4이하면 Stage만 1 증가하고 저장!!
+        if (gameData.StationNumber <= 4 && gameData.StageNumber < 9) // Station은 4이하, Stage는 9미만이면 Stage만 1 증가하고 저장!!
         {
             LoadGameDataFromJson();
             gameData.StageNumber += 1;
@@ -108,9 +108,9 @@ public class GameManager : MonoBehaviour
                 + " 번째 역의 " + gameData.StageNumber + "스테이지 입니다."); // 출력한번 해주고
             //LoadGameDataFromJson();
         }
-        else if (gameData.StationNumber <= 10 && gameData.StageNumber == 4) // Station 10이하, Stage == 4일때
+        else if (gameData.StationNumber <= 4 && gameData.StageNumber == 9) // Station 4이하, Stage == 10일때
         {
-            if (gameData.StationNumber == 10) // Station이 10이면 게임 완전히 클리어
+            if (gameData.StationNumber == 4) // Station이 10이면 게임 완전히 클리어
             {
                 Debug.Log("ALL STATION CLEAR!!");
                 return;
