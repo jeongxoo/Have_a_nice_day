@@ -993,11 +993,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2e072d4829de5497d9e5e52850ef8756, type: 3}
   bgmSounds:
   - name: BGM_Title
-    clip: {fileID: 8300000, guid: be29d74ef53d64a45bdbe5b70d946c81, type: 3}
+    clip: {fileID: 8300000, guid: ebf0759fce1644bb89a734542af075f7, type: 3}
   - name: BGM_Main
-    clip: {fileID: 8300000, guid: ba9c2502b9fd3492e8059be273674e1d, type: 3}
+    clip: {fileID: 8300000, guid: b97a1e71662a348e98c6a3d1f5450bc3, type: 3}
   - name: BGM_Play
-    clip: {fileID: 8300000, guid: 6fe8a8b1f584f488eb2e823f8deacc0b, type: 3}
+    clip: {fileID: 8300000, guid: 4aba3b388dde044259ebc3c713258866, type: 3}
   BGM_Title: BGM_Title
   BGM_Main: BGM_Main
   BGM_Play: BGM_Play
