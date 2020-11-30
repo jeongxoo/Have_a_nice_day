@@ -175,4 +175,6 @@ public class GameData // 게임 데이타 저장용 클래스 (추후에 수정)
 
     public float bgmVol = 1;
     public float effectVol = 1;
+
+    public bool isTutorial = true;
 }

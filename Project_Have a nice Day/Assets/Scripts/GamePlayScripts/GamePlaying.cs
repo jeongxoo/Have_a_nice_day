@@ -146,7 +146,14 @@ public class GamePlaying : MonoBehaviour
             isGameOver = true;
             Debug.Log("WIN!!");
             MainCanvas.Main.bar.StopTimer();
-            GameManager.Instance.gameData.puzzle4Index += 1;
+            if(GameManager.Instance.gameData.isTutorial)
+            {
+                GameManager.Instance.gameData.isTutorial = false;
+            }
+            else
+            {
+                GameManager.Instance.gameData.puzzle4Index += 1;
+            }
             GameManager.Instance.SaveGameDataToJson();
             MainCanvas.Main.wonPanel.gameObject.SetActive(true);
         }

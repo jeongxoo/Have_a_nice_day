@@ -10,6 +10,7 @@ public class PlayManager : MonoBehaviour
     public CubeCreate cubeCreate;
     public StartGameScript startGameScript;
     public ItemUnit itemUnit;
+    public CameraControl cam;
 
     private void Awake()
     {
@@ -26,6 +27,18 @@ public class PlayManager : MonoBehaviour
 
     private void Start()
     {
-        itemUnit.Button();
+        
+        if(GameManager.Instance.gameData.isTutorial)
+        {
+            startGameScript.StartPlayLevel(8, 1);
+            gamePlaying.Reset();
+            lineControl.Reset();
+        }
+        else
+        {
+            itemUnit.Button();
+
+        }
+
     }
 }

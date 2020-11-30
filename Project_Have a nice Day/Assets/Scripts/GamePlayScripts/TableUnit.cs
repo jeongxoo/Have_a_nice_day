@@ -33,6 +33,11 @@ public class TableUnit : MonoBehaviour
         faceMat = faceRender.material;
     }
 
+    public void Reset()
+    {
+        ChangeToNormalColor();
+    }
+
     public bool IsFree()
     {
         if (state == State.Free)
