@@ -159,6 +159,8 @@ public class GameManager : MonoBehaviour
         gameData.StationNumber = 1;
         gameData.StageNumber = 1;
         gameData.puzzle4Index = 0;
+        gameData.isTutorial = true;
+        gameData.numberOfRenew = 0;
         SaveGameDataToJson();
     }
 }
@@ -177,4 +179,6 @@ public class GameData // 게임 데이타 저장용 클래스 (추후에 수정)
     public float effectVol = 1;
 
     public bool isTutorial = true;
+    public int numberOfRenew = 0;
+    public float clearTime = 0;
 }

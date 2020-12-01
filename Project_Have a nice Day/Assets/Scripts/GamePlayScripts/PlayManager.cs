@@ -37,7 +37,6 @@ public class PlayManager : MonoBehaviour
         else
         {
             itemUnit.Button();
-
         }
 
     }

@@ -17,9 +17,16 @@ public class GamePlaying : MonoBehaviour
 
     public void Reset()
     {
+        for (int i = 0; i < listArrayScript.Count; i++)
+        {
+            listArrayScript[i].Reset();
+        }
+
         listArrayScript = new List<TableUnit>();
         isGameOver = false;
         currentNumber = 0;
+
+        MainCanvas.Main.ingameScript.SetNumberNext(1, max, isGameOver);
 
         if(totalBox != 0)
         {
@@ -149,6 +156,10 @@ public class GamePlaying : MonoBehaviour
             if(GameManager.Instance.gameData.isTutorial)
             {
                 GameManager.Instance.gameData.isTutorial = false;
+                GameManager.Instance.gameData.numberOfRenew = MainCanvas.Main.ingameScript.renewNumber;
+                GameManager.Instance.gameData.clearTime = MainCanvas.Main.ingameScript.cleartime;
+                GameManager.Instance.SaveGameDataToJson();
+                MainCanvas.Main.RenewTest();
             }
             else
             {

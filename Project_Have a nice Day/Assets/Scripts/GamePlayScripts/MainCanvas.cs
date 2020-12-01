@@ -12,6 +12,8 @@ public class MainCanvas : MonoBehaviour
 
     public Image lostPanel;
     public Image wonPanel;
+    public Text renewTest;
+    public Text clearTimeTest;
 
     private void Awake()
     {
@@ -38,5 +40,11 @@ public class MainCanvas : MonoBehaviour
     public void GoHome()
     {
         SceneManager.LoadScene("MainGameScene");
+    }
+
+    public void RenewTest()
+    {
+        renewTest.text = GameManager.Instance.gameData.numberOfRenew.ToString();
+        clearTimeTest.text = GameManager.Instance.gameData.clearTime.ToString();
     }
 }

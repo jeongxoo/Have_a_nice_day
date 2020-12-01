@@ -24,7 +24,7 @@ public class Bar : MonoBehaviour
         switch (map)
         {
             case 4:
-                duration = 600;
+                duration = 60;
                 break;
             case 6:
                 duration = 40;
