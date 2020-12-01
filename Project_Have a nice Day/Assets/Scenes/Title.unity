@@ -159,6 +159,9 @@ MonoBehaviour:
     NumberOfIllustration: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
     bgmVol: 1
     effectVol: 1
+    isTutorial: 1
+    numberOfRenew: 0
+    clearTime: 0
   audioManager: {fileID: 827923970}
   currentStationNumber: 0
   currentStageNumber: 0
@@ -979,6 +982,9 @@ MonoBehaviour:
     NumberOfIllustration: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
     bgmVol: 1
     effectVol: 1
+    isTutorial: 1
+    numberOfRenew: 0
+    clearTime: 0
   audioSourceEffects:
   - {fileID: 827923969}
   - {fileID: 827923968}

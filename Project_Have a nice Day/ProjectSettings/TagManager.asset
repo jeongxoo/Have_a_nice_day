@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - developer
+  - worker
+  - soldier
+  - student
+  - Soldier
+  - GameDeveloper
+  - UniversityStudent
+  - OfficeWorker
+  - studentLock
   layers:
   - Default
   - TransparentFX
