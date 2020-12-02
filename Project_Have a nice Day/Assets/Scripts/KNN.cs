@@ -23,6 +23,19 @@ public class KNN : MonoBehaviour
 
     public float addResult; // 예측값의 평균을 계산하기위해 예측값을 다 담아주는 변수
 
+    public GameData gameData;
+
+    private void Awake()
+    {
+        GameManager.Instance.LoadGameDataFromJson();
+
+        //Debug.Log(GameManager.Instance.gameData.clearTime);
+        //Debug.Log(GameManager.Instance.gameData.numberOfRenew);
+
+        UserData.time = GameManager.Instance.gameData.clearTime;
+        UserData.retry = GameManager.Instance.gameData.numberOfRenew;
+    }
+
     void Start()
     {
         TrainData = new List<DataSet>();
@@ -36,6 +49,8 @@ public class KNN : MonoBehaviour
         saveResult = new int[kNumber];
 
         ReadData(); // 데이터 읽어오는 함수 실행
+        CalculateDistance();
+
     }
 
     public void ReadData()
@@ -65,8 +80,8 @@ public class KNN : MonoBehaviour
 
     public void CalculateDistance()
     {
-        UserData.time = Random.Range(0, 80);
-        UserData.retry = Random.Range(0, 5); // 유저 데이터 설정 > 이거는 플레이 결과를 바탕으로 계속 읽어와야할듯
+        //UserData.time = gameData.clearTime;
+        //UserData.retry = gameData.numberOfRenew; // 유저 데이터 설정 > 이거는 플레이 결과를 바탕으로 계속 읽어와야할듯
 
         Debug.Log("time : " + UserData.time);
         Debug.Log("retry : " + UserData.retry);

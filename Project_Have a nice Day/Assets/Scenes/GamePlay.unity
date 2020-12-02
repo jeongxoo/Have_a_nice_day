@@ -2983,6 +2983,7 @@ GameObject:
   - component: {fileID: 1914455810}
   - component: {fileID: 1914455812}
   - component: {fileID: 1914455811}
+  - component: {fileID: 1914455813}
   m_Layer: 5
   m_Name: WonPanel
   m_TagString: Untagged
@@ -3051,6 +3052,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914455809}
   m_CullTransparentMesh: 0
+--- !u!114 &1914455813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914455809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65eeb0a8020a45288a5dcdd1ff43c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UserData:
+    time: 0
+    retry: 0
+    result: 0
+  distance: []
+  TrainData: []
+  kNumber: 0
+  bestLabel: 0
+  bestDistance: 0
+  labelSet: []
+  countNumber: 0
+  saveTime: []
+  saveRetry: 
+  saveResult: 
+  addResult: 0
+  gameData:
+    StageNumber: 1
+    StationNumber: 1
+    puzzle4Index: 0
+    CharacterNumber: 00000000000000000000000000000000
+    IllustrationNumber: 00000000000000000000000000000000
+    NumberOfIllustration: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+    bgmVol: 1
+    effectVol: 1
+    isTutorial: 1
+    numberOfRenew: 0
+    clearTime: 0
 --- !u!1 &2012007975
 GameObject:
   m_ObjectHideFlags: 0
