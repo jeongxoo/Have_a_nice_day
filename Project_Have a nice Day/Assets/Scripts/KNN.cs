@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 public class KNN : MonoBehaviour
 {
@@ -23,6 +24,22 @@ public class KNN : MonoBehaviour
 
     public float addResult; // 예측값의 평균을 계산하기위해 예측값을 다 담아주는 변수
 
+<<<<<<< Updated upstream
+=======
+    public Text knn;
+
+    public GameData gameData;
+
+    private void Awake()
+    {
+        GameManager.Instance.LoadGameDataFromJson();
+
+        UserData.time = GameManager.Instance.gameData.clearTime;
+        UserData.retry = GameManager.Instance.gameData.numberOfRenew;
+
+    }
+
+>>>>>>> Stashed changes
     void Start()
     {
         TrainData = new List<DataSet>();
@@ -36,6 +53,15 @@ public class KNN : MonoBehaviour
         saveResult = new int[kNumber];
 
         ReadData(); // 데이터 읽어오는 함수 실행
+<<<<<<< Updated upstream
+=======
+        if (GameManager.Instance.gameData.isTutorial)
+        {
+            CalculateDistance();
+            GameManager.Instance.gameData.isTutorial = false;
+            GameManager.Instance.SaveGameDataToJson();
+        }
+>>>>>>> Stashed changes
     }
 
     public void ReadData()
@@ -65,9 +91,12 @@ public class KNN : MonoBehaviour
 
     public void CalculateDistance()
     {
+<<<<<<< Updated upstream
         UserData.time = Random.Range(0, 80);
         UserData.retry = Random.Range(0, 5); // 유저 데이터 설정 > 이거는 플레이 결과를 바탕으로 계속 읽어와야할듯
 
+=======
+>>>>>>> Stashed changes
         Debug.Log("time : " + UserData.time);
         Debug.Log("retry : " + UserData.retry);
 
@@ -118,8 +147,25 @@ public class KNN : MonoBehaviour
         }
 
         bestLabel = Mathf.Round(addResult / kNumber); // 최종적으로 입력 데이터의 레이블을 구함
-        Debug.Log("반올림 직전의 값은? : " + addResult / kNumber);
-        Debug.Log("난이도 선택 결과는?? : " + bestLabel);
+
+        switch (bestLabel)
+        {
+            case 1:
+                GameManager.Instance.gameData.knn = 8;
+                break;
+
+            case 2:
+                GameManager.Instance.gameData.knn = 6;
+                break;
+
+            case 3:
+                GameManager.Instance.gameData.knn = 4;
+                break;
+        }
+        GameManager.Instance.SaveGameDataToJson();
+
+        PrintKNN();
+        Debug.Log("난이도 선택 결과는?? : " + GameManager.Instance.gameData.knn);
 
         for (int i = 0; i < kNumber; i++) // k개의 데이터, 레이블을 고르는 과정에서 삭제한 트레인 데이터를 복구시켜줌
         {
@@ -130,6 +176,28 @@ public class KNN : MonoBehaviour
             TrainData.Add(saveData);
         }    
  
+    }
+
+    public void PrintKNN()
+    {
+        GameManager.Instance.LoadGameDataFromJson();
+
+        Debug.Log(GameManager.Instance.gameData.knn);
+
+        switch (GameManager.Instance.gameData.knn)
+        {
+            case 4:
+                knn.GetComponent<Text>().text = "추천 난이도 설정 EASY";
+                break;
+
+            case 6:
+                knn.GetComponent<Text>().text = "추천 난이도 설정 NORMAL";
+                break;
+
+            case 8:
+                knn.GetComponent<Text>().text = "추천 난이도 설정 HARD";
+                break;
+        }
     }
 
     public float Twice(float a)

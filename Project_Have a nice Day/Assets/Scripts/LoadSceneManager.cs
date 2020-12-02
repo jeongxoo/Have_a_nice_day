@@ -33,24 +33,25 @@ public class LoadSceneManager : MonoBehaviour
     public void MainToPlay() // 출발지 : 메인 씬 도착지 : 플레이 씬
     {
         SceneManager.LoadScene("GamePlayScene");
-        AudioManager.instance.PlayButton3();
+        AudioManager.instance.PlayButton1();
     }
 
     public void MainToCollect() // 출발지 : 메인 씬 도착지 : 수집 씬
     {
         SceneManager.LoadScene("Collection");
-        AudioManager.instance.PlayButton2();
+        AudioManager.instance.PlayButton1();
     }
 
     public void MaintToSetting() // 출발지 : 메인 씬 도착지 : 설정 씬
     {
         SceneManager.LoadScene("SettingScene");
-        AudioManager.instance.PlayButton2();
+        AudioManager.instance.PlayButton1();
     }
 
     public void ToGame()
     {
         SceneManager.LoadScene("GamePlay");
+        AudioManager.instance.PlayButton2();
     }
 
     #endregion From_Main

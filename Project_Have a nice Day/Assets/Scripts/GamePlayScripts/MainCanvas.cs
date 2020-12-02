@@ -44,7 +44,15 @@ public class MainCanvas : MonoBehaviour
 
     public void RenewTest()
     {
-        renewTest.text = GameManager.Instance.gameData.numberOfRenew.ToString();
-        clearTimeTest.text = GameManager.Instance.gameData.clearTime.ToString();
+        GameManager.Instance.LoadGameDataFromJson();
+
+        if (GameManager.Instance.gameData.isTutorial)
+        {
+            renewTest.GetComponent<Text>().text = "재시작 : " + GameManager.Instance.gameData.numberOfRenew;
+            clearTimeTest.GetComponent<Text>().text = "클리어 시간 : " + GameManager.Instance.gameData.clearTime;
+
+        }
     }
+    
+
 }

@@ -166,8 +166,13 @@ MonoBehaviour:
   currentStationNumber: 0
   currentStageNumber: 0
   currentPuzzle4Index: 0
+<<<<<<< Updated upstream
   saveBgmVol: 0
   saveEffectVol: 0
+=======
+  clearTime: 0
+  numOfReplay: 0
+>>>>>>> Stashed changes
 --- !u!4 &40505462
 Transform:
   m_ObjectHideFlags: 0
@@ -992,16 +997,14 @@ MonoBehaviour:
   playingBGMName: 
   effectSounds:
   - name: Button1
-    clip: {fileID: 8300000, guid: 723ae702e09bc42a09d49eabba39f1d4, type: 3}
+    clip: {fileID: 8300000, guid: cbd0fcda0610847f3b21572438acf864, type: 3}
   - name: Button2
-    clip: {fileID: 8300000, guid: 8507d6b15004d4a5e9ffc671102a0312, type: 3}
-  - name: Button3
     clip: {fileID: 8300000, guid: 2e072d4829de5497d9e5e52850ef8756, type: 3}
   bgmSounds:
   - name: BGM_Title
-    clip: {fileID: 8300000, guid: ebf0759fce1644bb89a734542af075f7, type: 3}
-  - name: BGM_Main
     clip: {fileID: 8300000, guid: b97a1e71662a348e98c6a3d1f5450bc3, type: 3}
+  - name: BGM_Main
+    clip: {fileID: 8300000, guid: ebf0759fce1644bb89a734542af075f7, type: 3}
   - name: BGM_Play
     clip: {fileID: 8300000, guid: 4aba3b388dde044259ebc3c713258866, type: 3}
   BGM_Title: BGM_Title

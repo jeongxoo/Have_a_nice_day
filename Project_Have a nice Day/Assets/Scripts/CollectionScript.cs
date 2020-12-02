@@ -59,6 +59,7 @@ public class CollectionScript : MonoBehaviour
     public void ToMain()
     {
         SceneManager.LoadScene("MainGameScene");
+        AudioManager.instance.PlayButton1();
     }
 
     public void SellectScene(Button button)

@@ -165,9 +165,13 @@ public class AudioManager : MonoBehaviour
         }
         else if(_sceneName == "MainGameScene")
         {
+            PlayBGM(BGM_Title);
+        }
+        else if(_sceneName == "Collection")
+        {
             PlayBGM(BGM_Main);
         }
-        else if(_sceneName == "GamePlayScene")
+        else if(_sceneName == "GamePlay")
         {
             PlayBGM(BGM_Play);
         }

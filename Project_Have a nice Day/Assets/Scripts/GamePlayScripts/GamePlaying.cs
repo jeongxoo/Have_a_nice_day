@@ -153,20 +153,24 @@ public class GamePlaying : MonoBehaviour
             isGameOver = true;
             Debug.Log("WIN!!");
             MainCanvas.Main.bar.StopTimer();
-            if(GameManager.Instance.gameData.isTutorial)
+
+            GameManager.Instance.GetScore();
+
+            if (GameManager.Instance.gameData.isTutorial)
             {
-                GameManager.Instance.gameData.isTutorial = false;
+                //GameManager.Instance.gameData.isTutorial = false;
                 GameManager.Instance.gameData.numberOfRenew = MainCanvas.Main.ingameScript.renewNumber;
                 GameManager.Instance.gameData.clearTime = MainCanvas.Main.ingameScript.cleartime;
                 GameManager.Instance.SaveGameDataToJson();
-                MainCanvas.Main.RenewTest();
             }
             else
             {
                 GameManager.Instance.gameData.puzzle4Index += 1;
             }
-            GameManager.Instance.SaveGameDataToJson();
+
             MainCanvas.Main.wonPanel.gameObject.SetActive(true);
+            MainCanvas.Main.RenewTest();
+            GameManager.Instance.SaveGameDataToJson();
         }
     }
 }

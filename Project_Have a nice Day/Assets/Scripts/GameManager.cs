@@ -19,8 +19,13 @@ public class GameManager : MonoBehaviour
     public int currentStageNumber; // 현재 스테이지      
     public int currentPuzzle4Index; // 퍼즐인덱스!! 아마 1~200까지 그리고 이거는 예시라서 4 by 4만 적용됨
 
+<<<<<<< Updated upstream
     public float saveBgmVol; // BGM 볼륨
     public float saveEffectVol; // Effect 볼륨
+=======
+    //public float saveBgmVol; // BGM 볼륨
+    //public float saveEffectVol; // Effect 볼륨
+>>>>>>> Stashed changes
 
     // 게임매니저
     #region 싱글톤(게임매니저)
@@ -63,8 +68,9 @@ public class GameManager : MonoBehaviour
         currentStageNumber = gameData.StageNumber;
         currentStationNumber = gameData.StationNumber;
         currentPuzzle4Index = gameData.puzzle4Index;
-        saveBgmVol = gameData.bgmVol;
-        saveEffectVol = gameData.effectVol;
+
+        BgmVolumeControll(gameData.bgmVol);
+        EffectVolumeControll(gameData.effectVol);
     }
 
     // JSON 데이터 save&load
@@ -95,9 +101,9 @@ public class GameManager : MonoBehaviour
 
     public void GetScore()
     {
+        LoadGameDataFromJson();
         if (gameData.StationNumber <= 4 && gameData.StageNumber < 9) // Station은 4이하, Stage는 9미만이면 Stage만 1 증가하고 저장!!
-        {
-            LoadGameDataFromJson();
+        {    
             gameData.StageNumber += 1;
             gameData.puzzle4Index += 1;
             currentStageNumber = gameData.StageNumber;
@@ -117,7 +123,6 @@ public class GameManager : MonoBehaviour
             }
             else // 게임 클리어가 아니라면 Station은 1 증가하고 Stage는 1로 초기화!!
             {
-                LoadGameDataFromJson();
                 gameData.StageNumber = 1;
                 gameData.StationNumber += 1;
                 gameData.puzzle4Index += 1;
@@ -140,7 +145,7 @@ public class GameManager : MonoBehaviour
         gameData.bgmVol = _value;
         audioManager.audioSourceBGM.volume = gameData.bgmVol;
         SaveGameDataToJson();
-        saveBgmVol = gameData.bgmVol;
+        //saveBgmVol = gameData.bgmVol;
     }
 
     public void EffectVolumeControll(float _value) // Effect 볼륨 조절
@@ -151,7 +156,7 @@ public class GameManager : MonoBehaviour
             audioManager.audioSourceEffects[i].volume = gameData.effectVol;
             SaveGameDataToJson();
         }
-        saveEffectVol = gameData.effectVol;
+        //saveEffectVol = gameData.effectVol;
     }
 
     public void ResetGameData() // Station이랑 Stage초기화 할 때 쓰는 함수~
@@ -161,6 +166,7 @@ public class GameManager : MonoBehaviour
         gameData.puzzle4Index = 0;
         gameData.isTutorial = true;
         gameData.numberOfRenew = 0;
+        gameData.knn = 4;
         SaveGameDataToJson();
     }
 }
@@ -168,8 +174,8 @@ public class GameManager : MonoBehaviour
 [System.Serializable]
 public class GameData // 게임 데이타 저장용 클래스 (추후에 수정)
 {
-    public int StageNumber = 1; // 스테이지는 1 부터 4까지
-    public int StationNumber = 1; // 스테이션은 10까지만
+    public int StageNumber = 1; 
+    public int StationNumber = 1; 
     public int puzzle4Index = 0;
     public int[] CharacterNumber = new int[4];
     public int[] IllustrationNumber = new int[4];
@@ -181,4 +187,5 @@ public class GameData // 게임 데이타 저장용 클래스 (추후에 수정)
     public bool isTutorial = true;
     public int numberOfRenew = 0;
     public float clearTime = 0;
+    public int knn = 0;
 }

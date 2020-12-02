@@ -13,8 +13,9 @@ public class Setting : MonoBehaviour
 
     public void Start()
     {
-        bgmVolumeSlider.value = GameManager.Instance.saveBgmVol;
-        effectVolumeSlider.value = GameManager.Instance.saveEffectVol;
+        GameManager.Instance.LoadGameDataFromJson();
+        bgmVolumeSlider.value = GameManager.Instance.gameData.bgmVol;
+        effectVolumeSlider.value = GameManager.Instance.gameData.effectVol;
     }
 
     public void BGMVolume()
