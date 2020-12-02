@@ -22,9 +22,6 @@ public class GameManager : MonoBehaviour
     public float saveBgmVol; // BGM 볼륨
     public float saveEffectVol; // Effect 볼륨
 
-    public float clearTime;
-    public int numOfReplay;
-
     // 게임매니저
     #region 싱글톤(게임매니저)
     public static GameManager Instance // 이거는 외부에서 게임매니저를 참조할 수 있게 해주는 Instance 생성 코드
