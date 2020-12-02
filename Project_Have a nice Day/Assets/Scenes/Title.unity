@@ -169,10 +169,13 @@ MonoBehaviour:
 <<<<<<< Updated upstream
   saveBgmVol: 0
   saveEffectVol: 0
+<<<<<<< HEAD
 =======
   clearTime: 0
   numOfReplay: 0
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of a08a98c9... Timer
 --- !u!4 &40505462
 Transform:
   m_ObjectHideFlags: 0
@@ -1254,8 +1257,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 400, y: 100}
+=======
+  m_AnchoredPosition: {x: 40, y: 289}
+  m_SizeDelta: {x: 600, y: 400}
+>>>>>>> parent of a08a98c9... Timer
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1994509859
 MonoBehaviour:
@@ -1276,7 +1284,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   m_Sprite: {fileID: 0}
+=======
+  m_Sprite: {fileID: 21300000, guid: 95cde2c6394c2413aa4b227005f80cd9, type: 3}
+>>>>>>> parent of a08a98c9... Timer
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
