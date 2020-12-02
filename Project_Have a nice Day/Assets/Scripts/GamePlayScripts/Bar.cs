@@ -14,14 +14,7 @@ public class Bar : MonoBehaviour
 
     private void Start()
     {
-        if(GameManager.Instance.gameData.isTutorial)
-        {
-            TimerGo(8);
-        }
-        else
-        {
-            TimerGo(itemUnit.map);
-        }
+        TimerGo(itemUnit.map);
     }
 
     public void TimerGo(int map)
@@ -31,10 +24,10 @@ public class Bar : MonoBehaviour
         switch (map)
         {
             case 4:
-                duration = 40;
+                duration = 60;
                 break;
             case 6:
-                duration = 60;
+                duration = 40;
                 break;
             default:
                 duration = 80;

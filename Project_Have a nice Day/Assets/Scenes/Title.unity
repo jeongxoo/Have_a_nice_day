@@ -168,8 +168,6 @@ MonoBehaviour:
   currentPuzzle4Index: 0
   saveBgmVol: 0
   saveEffectVol: 0
-  clearTime: 0
-  numOfReplay: 0
 --- !u!4 &40505462
 Transform:
   m_ObjectHideFlags: 0
@@ -1211,7 +1209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -800}
+  m_AnchoredPosition: {x: 40, y: -809}
   m_SizeDelta: {x: 1262.9468, y: 1438.7551}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1538524323
@@ -1406,7 +1404,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 280}
+  m_AnchoredPosition: {x: 40, y: 289}
   m_SizeDelta: {x: 600, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1994509859
@@ -1428,7 +1426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 06d0d613cc5a3443f87064a15b45adaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95cde2c6394c2413aa4b227005f80cd9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
