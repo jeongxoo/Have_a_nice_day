@@ -16,7 +16,7 @@ public class InGameScript : MonoBehaviour
 
     private void Awake()
     {
-        if(GameManager.Instance.gameData.isTutorial)
+        if(GameManager.Instance.gameData.isTutorial == 1)
         {
             TutorialRenew.gameObject.SetActive(true);
         }

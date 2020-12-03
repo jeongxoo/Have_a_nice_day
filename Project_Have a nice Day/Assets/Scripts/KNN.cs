@@ -26,7 +26,7 @@ public class KNN : MonoBehaviour
 
     public GameData gameData;
 
-    public Text knn;
+    //public Text knnText;
 
     private void Awake()
     {
@@ -49,10 +49,10 @@ public class KNN : MonoBehaviour
         saveResult = new int[kNumber];
 
         ReadData(); // 데이터 읽어오는 함수 실행
-        if (GameManager.Instance.gameData.isTutorial)
+        if (GameManager.Instance.gameData.isTutorial == 1)
         {
             CalculateDistance();
-            GameManager.Instance.gameData.isTutorial = false;
+            GameManager.Instance.gameData.isTutorial = 0;
             GameManager.Instance.SaveGameDataToJson();
         }
         
@@ -154,7 +154,8 @@ public class KNN : MonoBehaviour
         GameManager.Instance.SaveGameDataToJson();
 
 
-        PrintKNN();
+        MainCanvas.Main.PrintKNN();
+
         Debug.Log("난이도 선택 결과는?? : " + GameManager.Instance.gameData.knn);
 
         for (int i = 0; i < kNumber; i++) // k개의 데이터, 레이블을 고르는 과정에서 삭제한 트레인 데이터를 복구시켜줌
@@ -168,7 +169,7 @@ public class KNN : MonoBehaviour
  
     }
 
-    public void PrintKNN()
+    /*public void PrintKNN()
     {
         GameManager.Instance.LoadGameDataFromJson();
 
@@ -177,18 +178,18 @@ public class KNN : MonoBehaviour
         switch (GameManager.Instance.gameData.knn)
         {
             case 4:
-                knn.GetComponent<Text>().text = "추천 난이도 설정 EASY";
+                knnText.GetComponent<Text>().text = "추천 난이도 설정 EASY";
                 break;
 
             case 6:
-                knn.GetComponent<Text>().text = "추천 난이도 설정 NORMAL";
+                knnText.GetComponent<Text>().text = "추천 난이도 설정 NORMAL";
                 break;
 
             case 8:
-                knn.GetComponent<Text>().text = "추천 난이도 설정 HARD";
+                knnText.GetComponent<Text>().text = "추천 난이도 설정 HARD";
                 break;
         }
-    }
+    }*/
 
     public float Twice(float a)
     {

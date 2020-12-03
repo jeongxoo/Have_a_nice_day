@@ -14,7 +14,7 @@ public class Bar : MonoBehaviour
 
     private void Start()
     {
-        if(GameManager.Instance.gameData.isTutorial)
+        if(GameManager.Instance.gameData.isTutorial == 1)
         {
             TimerGo(8);
         }

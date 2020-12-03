@@ -2989,6 +2989,7 @@ MonoBehaviour:
   image: {fileID: 9653678}
   station: {fileID: 1553411406}
   stage: {fileID: 760232783}
+  knnText: {fileID: 2124827937}
 --- !u!114 &1819190372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3124,7 +3125,6 @@ MonoBehaviour:
     numberOfRenew: 0
     clearTime: 0
     knn: 0
-  knn: {fileID: 2124827937}
 --- !u!1 &2012007975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3414,4 +3414,3 @@ MonoBehaviour:
     numberOfRenew: 0
     clearTime: 0
     knn: 0
-  knn: {fileID: 0}

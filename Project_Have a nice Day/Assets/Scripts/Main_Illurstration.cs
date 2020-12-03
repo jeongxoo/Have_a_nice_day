@@ -28,11 +28,11 @@ public class Main_Illurstration : MonoBehaviour
 
     public void LoadIllustration()
     {
-        checkPoint = GameManager.Instance.currentStageNumber;
+        checkPoint = GameManager.Instance.gameData.StageNumber;
 
         for (int i = 0; i < illustrations.Length; i++)
         {
-            if (GameManager.Instance.currentStationNumber - 1 == i)
+            if (GameManager.Instance.gameData.StationNumber - 1 == i)
             {
                 intoBlack.sprite = illustrations[i].illBlack;
 
@@ -41,7 +41,7 @@ public class Main_Illurstration : MonoBehaviour
                     intoColor[j].sprite = illustrations[i].illColor[j];
                     intoColor[j].gameObject.SetActive(false);
 
-                    if(GameManager.Instance.currentStageNumber - 1 == j)
+                    if(GameManager.Instance.gameData.StageNumber - 1 == j)
                     {
                         for (int a = 0; a < checkPoint - 1; a++)
                         {

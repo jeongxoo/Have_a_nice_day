@@ -76,15 +76,15 @@ public class UIManager : MonoBehaviour
 
     public void Start()
     {
-        miniMapText.text = "Episode : " + GameManager.Instance.currentStationNumber + "\n"
-            + "Stage : " + GameManager.Instance.currentStageNumber;
+        miniMapText.text = "Episode : " + GameManager.Instance.gameData.StationNumber + "\n"
+            + "Stage : " + GameManager.Instance.gameData.StageNumber;
     }
 
 
     public void ScoreCheck() // 스테이지 넘기기 및 점수 확인 용 임시 버튼에 들어갈 함수
     {
 
-        if(GameManager.Instance.currentStationNumber == 10 && GameManager.Instance.currentStageNumber == 4)
+        if(GameManager.Instance.gameData.StationNumber == 10 && GameManager.Instance.gameData.StageNumber == 4)
         {
             GameManager.Instance.GetScore();
             miniMapText.text = "게임 클리어";
@@ -92,8 +92,8 @@ public class UIManager : MonoBehaviour
         else
         {
             GameManager.Instance.GetScore();
-            miniMapText.text = "Episode : " + GameManager.Instance.currentStationNumber + "\n"
-                + "Stage : " + GameManager.Instance.currentStageNumber;
+            miniMapText.text = "Episode : " + GameManager.Instance.gameData.StationNumber + "\n"
+                + "Stage : " + GameManager.Instance.gameData.StageNumber;
         }
     }
 
@@ -103,9 +103,9 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             position[i].gameObject.SetActive(false);
-            if(GameManager.Instance.currentStationNumber == i + 1)
+            if(GameManager.Instance.gameData.StationNumber == i + 1)
             {
-                if (GameManager.Instance.currentStationNumber == 10 && GameManager.Instance.currentStageNumber == 4)
+                if (GameManager.Instance.gameData.StationNumber == 10 && GameManager.Instance.gameData.StageNumber == 4)
                 {
                     position[i].gameObject.SetActive(true);
                     inMapText.text = "LAST STAGE";
@@ -113,8 +113,8 @@ public class UIManager : MonoBehaviour
                 else
                 {
                     position[i].gameObject.SetActive(true);
-                    inMapText.text = "현재 " + GameManager.Instance.currentStationNumber + "번째 역\n"
-                        + GameManager.Instance.currentStageNumber + "번째 스테이지입니다.";
+                    inMapText.text = "현재 " + GameManager.Instance.gameData.StationNumber + "번째 역\n"
+                        + GameManager.Instance.gameData.StageNumber + "번째 스테이지입니다.";
                 }
             }
         }

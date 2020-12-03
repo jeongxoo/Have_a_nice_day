@@ -23,6 +23,8 @@ public class MainCanvas : MonoBehaviour
     public Text station;
     public Text stage;
 
+    public Text knnText;
+
     private void Awake()
     {
         mainCanvas = this;
@@ -87,11 +89,33 @@ public class MainCanvas : MonoBehaviour
 
     public void RenewTest()
     {
-        if (GameManager.Instance.gameData.isTutorial)
+        if (GameManager.Instance.gameData.isTutorial == 1)
         {
             renewTest.GetComponent<Text>().text = "재시작 : " + GameManager.Instance.gameData.numberOfRenew;
             clearTimeTest.GetComponent<Text>().text = "클리어 시간 : " + GameManager.Instance.gameData.clearTime;
 
+        }
+    }
+
+    public void PrintKNN()
+    {
+        GameManager.Instance.LoadGameDataFromJson();
+
+        Debug.Log(GameManager.Instance.gameData.knn);
+
+        switch (GameManager.Instance.gameData.knn)
+        {
+            case 4:
+                knnText.GetComponent<Text>().text = "추천 난이도 설정 EASY";
+                break;
+
+            case 6:
+                knnText.GetComponent<Text>().text = "추천 난이도 설정 NORMAL";
+                break;
+
+            case 8:
+                knnText.GetComponent<Text>().text = "추천 난이도 설정 HARD";
+                break;
         }
     }
 }

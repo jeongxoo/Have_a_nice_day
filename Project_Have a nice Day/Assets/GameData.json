@@ -1,6 +1,7 @@
 {
     "StageNumber": 1,
     "StationNumber": 1,
+    "puzzle4Index": 0,
     "CharacterNumber": [
         0,
         0,
@@ -25,6 +26,10 @@
         0,
         0
     ],
-    "bgmVol": 0.0,
-    "effectVol": 0.1371428668498993
+    "bgmVol": 1.0,
+    "effectVol": 1.0,
+    "isTutorial": 1,
+    "numberOfRenew": 0,
+    "clearTime": 0.0,
+    "knn": 0
 }

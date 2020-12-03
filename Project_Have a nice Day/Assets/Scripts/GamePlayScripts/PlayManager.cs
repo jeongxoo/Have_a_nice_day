@@ -28,7 +28,7 @@ public class PlayManager : MonoBehaviour
     private void Start()
     {
         
-        if(GameManager.Instance.gameData.isTutorial)
+        if(GameManager.Instance.gameData.isTutorial == 1)
         {
             startGameScript.StartPlayLevel(8, 1);
             gamePlaying.Reset();

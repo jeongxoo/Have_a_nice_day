@@ -14,11 +14,6 @@ public class GameManager : MonoBehaviour
     public GameData gameData;
     public AudioManager audioManager;
 
-    // Station이 Stage보다 상위 개념!!
-    public int currentStationNumber; // 현재 역
-    public int currentStageNumber; // 현재 스테이지      
-    public int currentPuzzle4Index; // 퍼즐인덱스!! 아마 1~200까지 그리고 이거는 예시라서 4 by 4만 적용됨
-
     // 게임매니저
     #region 싱글톤(게임매니저)
     public static GameManager Instance // 이거는 외부에서 게임매니저를 참조할 수 있게 해주는 Instance 생성 코드
@@ -57,9 +52,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         LoadGameDataFromJson();
-        currentStageNumber = gameData.StageNumber;
-        currentStationNumber = gameData.StationNumber;
-        currentPuzzle4Index = gameData.puzzle4Index;
 
         BgmVolumeControll(gameData.bgmVol);
         EffectVolumeControll(gameData.effectVol);
@@ -69,6 +61,7 @@ public class GameManager : MonoBehaviour
     #region JSON
 
     // 데이터 저장 함수
+    [ContextMenu("To Json Data")]
     public void SaveGameDataToJson() // 현재 GameData를 JSON파일로 저장해주는 함수
     {
         string jsonData = JsonUtility.ToJson(gameData, true);
@@ -99,8 +92,6 @@ public class GameManager : MonoBehaviour
         {
             gameData.StageNumber += 1;
             gameData.puzzle4Index += 1;
-            currentStageNumber = gameData.StageNumber;
-            currentPuzzle4Index = gameData.puzzle4Index;
             SaveGameDataToJson();
 
             Debug.Log(" 다음 스테이지로 이동합니다. 현재 " + gameData.StationNumber
@@ -118,9 +109,6 @@ public class GameManager : MonoBehaviour
                 gameData.StageNumber = 1;
                 gameData.StationNumber += 1;
                 gameData.puzzle4Index += 1;
-                currentStageNumber = gameData.StageNumber;
-                currentStationNumber = gameData.StationNumber;
-                currentPuzzle4Index = gameData.puzzle4Index;
                 SaveGameDataToJson();
 
                 Debug.Log(" 모든 스테이지 클리어 다음 역인 " + gameData.StationNumber
@@ -153,7 +141,7 @@ public class GameManager : MonoBehaviour
         gameData.StationNumber = 1;
         gameData.StageNumber = 1;
         gameData.puzzle4Index = 0;
-        gameData.isTutorial = true;
+        gameData.isTutorial = 1;
         gameData.numberOfRenew = 0;
         gameData.knn = 4;
         SaveGameDataToJson();
@@ -161,7 +149,7 @@ public class GameManager : MonoBehaviour
 }
 
 [System.Serializable]
-public class GameData // 게임 데이타 저장용 클래스 (추후에 수정)
+public class GameData // 게임 데이타 저장용 클래스 
 {
     public int StageNumber = 1; // 스테이지는 1 부터 4까지
     public int StationNumber = 1; // 스테이션은 10까지만
@@ -169,15 +157,10 @@ public class GameData // 게임 데이타 저장용 클래스 (추후에 수정)
     public int[] CharacterNumber = new int[4];
     public int[] IllustrationNumber = new int[4];
     public int[] NumberOfIllustration = new int[10];
-
     public float bgmVol = 1;
     public float effectVol = 1;
-
-    public bool isTutorial = true;
+    public int isTutorial = 1;
     public int numberOfRenew = 0;
-    public float clearTime = 0;
-
-    public int knn = 0;
-
-
+    public float clearTime = 0.0f;
+    public int knn = 4;
 }

@@ -67,7 +67,7 @@ public class CubeCreate : MonoBehaviour
     public void ApplyData(int map)
     {
         
-        if(GameManager.Instance.gameData.isTutorial)
+        if(GameManager.Instance.gameData.isTutorial == 1)
         {
             newMap = new int[64] { 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 0, 4, 0, -1, 0, 8, 0, 9, 0, -1, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, -1, 6, 0, 7, 0, 0, 0, 0, -1, 0, 0, -1, 10 };
         }
