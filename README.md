@@ -33,5 +33,4 @@
 [예선_게임개발부문_NiceDay_PPT.pdf](https://github.com/jeongxoo/Have_a_nice_day/files/5603399/_._NiceDay_PPT.pdf)
 
 ### 데모 영상
-
-
+https://youtu.be/OUN0gW4TZmY
