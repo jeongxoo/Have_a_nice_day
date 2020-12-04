@@ -1,35 +1,11 @@
 {
     "StageNumber": 1,
-    "StationNumber": 1,
-    "puzzle4Index": 0,
-    "CharacterNumber": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "IllustrationNumber": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "NumberOfIllustration": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-    ],
-    "bgmVol": 1.0,
-    "effectVol": 1.0,
-    "isTutorial": 1,
-    "numberOfRenew": 0,
-    "clearTime": 0.0,
-    "knn": 0
+    "StationNumber": 2,
+    "puzzle4Index": 17,
+    "bgmVol": 0.5485714673995972,
+    "effectVol": 0.35285714268684389,
+    "isTutorial": 0,
+    "numberOfRenew": 20,
+    "clearTime": 23.74684715270996,
+    "knn": 4
 }

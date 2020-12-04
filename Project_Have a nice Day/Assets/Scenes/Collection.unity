@@ -4009,8 +4009,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   page1: {fileID: 911096432}
-  buttons: []
-  locks: []
   charButtons:
   - {fileID: 2125808065}
   - {fileID: 2143713083}
@@ -4028,6 +4026,24 @@ MonoBehaviour:
   - {fileID: 1144945518}
   charKey: 0
   currentKey: 0
+  studentIll:
+  - {fileID: 1928689980}
+  - {fileID: 2006556963}
+  - {fileID: 1427499044}
+  - {fileID: 581306315}
+  - {fileID: 771674069}
+  studentIllSprite:
+  - {fileID: 21300000, guid: 1058c8bbb39214df08cb32229b2799ad, type: 3}
+  - {fileID: 21300000, guid: 38c90e5bbb08d4841bd35bfd33e3867e, type: 3}
+  - {fileID: 21300000, guid: 9b78a00ca9c654cdbb1af5d5c1fde87e, type: 3}
+  - {fileID: 21300000, guid: 419c15ffce87e4796bf5d37e0e7ddf48, type: 3}
+  - {fileID: 21300000, guid: 54d35e7b7288b4777bd9976c4b163cb8, type: 3}
+  locks:
+  - {fileID: 1917040023}
+  - {fileID: 1913453691}
+  - {fileID: 1795801326}
+  - {fileID: 334121233}
+  - {fileID: 578479933}
   CloseupPanel: {fileID: 1433669637}
   CloseupImage: {fileID: 581551566}
 --- !u!114 &992749703

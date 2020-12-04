@@ -152,10 +152,11 @@ public class GamePlaying : MonoBehaviour
         {
             isGameOver = true;
             Debug.Log("WIN!!");
+            MainCanvas.Main.wonPanel.gameObject.SetActive(true);
             MainCanvas.Main.bar.StopTimer();
             MainCanvas.Main.UnLockILL();
-
             GameManager.Instance.GetScore();
+            MainCanvas.Main.RenewTest();
 
             if (GameManager.Instance.gameData.isTutorial == 1)
             {
@@ -166,9 +167,8 @@ public class GamePlaying : MonoBehaviour
             {
                 GameManager.Instance.gameData.puzzle4Index += 1;
             }
+
             GameManager.Instance.SaveGameDataToJson();
-            MainCanvas.Main.wonPanel.gameObject.SetActive(true);
-            MainCanvas.Main.RenewTest();
         }
     }
 }

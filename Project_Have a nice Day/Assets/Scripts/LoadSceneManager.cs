@@ -76,6 +76,16 @@ public class LoadSceneManager : MonoBehaviour
         Map.LoadMap6();
         Map.LoadMap8();
     }
+
+    public void FirstTitleToMain()
+    {
+        SceneManager.LoadScene("MainGameScene");
+        AudioManager.instance.PlayButton1();
+        Map.LoadMap4();
+        Map.LoadMap6();
+        Map.LoadMap8();
+        GameManager.Instance.ResetGameData();
+    }
 }
 
 

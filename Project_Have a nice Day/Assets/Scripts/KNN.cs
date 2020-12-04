@@ -31,9 +31,6 @@ public class KNN : MonoBehaviour
     private void Awake()
     {
         GameManager.Instance.LoadGameDataFromJson();
-
-        UserData.time = GameManager.Instance.gameData.clearTime;
-        UserData.retry = GameManager.Instance.gameData.numberOfRenew;
     }
 
     void Start()
@@ -49,6 +46,7 @@ public class KNN : MonoBehaviour
         saveResult = new int[kNumber];
 
         ReadData(); // 데이터 읽어오는 함수 실행
+
         if (GameManager.Instance.gameData.isTutorial == 1)
         {
             CalculateDistance();
@@ -86,6 +84,10 @@ public class KNN : MonoBehaviour
 
     public void CalculateDistance()
     {
+
+        UserData.time = GameManager.Instance.gameData.clearTime;
+        UserData.retry = GameManager.Instance.gameData.numberOfRenew;
+
         Debug.Log("time : " + UserData.time);
         Debug.Log("retry : " + UserData.retry);
 

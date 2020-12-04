@@ -16,11 +16,28 @@ public class GameManager : MonoBehaviour
 
     // 게임매니저
     #region 싱글톤(게임매니저)
+    private void Awake() // 이거는 게임매니저 싱글톤 코드
+    {
+
+        var objs = FindObjectsOfType<GameManager>();
+        if(objs.Length != 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+
+        Application.targetFrameRate = 60;
+        Time.timeScale = 1;
+
+        instance = this;
+    }
+
     public static GameManager Instance // 이거는 외부에서 게임매니저를 참조할 수 있게 해주는 Instance 생성 코드
     {
         get
         {
-            if(instance == null)
+            /*if(instance == null)
             {
                 var obj = FindObjectOfType<GameManager>();
                 if(obj != null)
@@ -32,21 +49,12 @@ public class GameManager : MonoBehaviour
                     var newobj = new GameObject().AddComponent<GameManager>();
                     instance = newobj;
                 }
-            }
+            }*/
             return instance;
         }
     }
 
-    private void Awake() // 이거는 게임매니저 싱글톤 코드
-    {
-        var objs = FindObjectsOfType<GameManager>();
-        if(objs.Length != 1)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
-    }
+
     #endregion 싱글톤(게임매니저)
 
     private void Start()
@@ -144,8 +152,10 @@ public class GameManager : MonoBehaviour
         gameData.isTutorial = 1;
         gameData.numberOfRenew = 0;
         gameData.knn = 4;
+        gameData.seceret = 0;
         SaveGameDataToJson();
     }
+
 }
 
 [System.Serializable]
@@ -154,13 +164,12 @@ public class GameData // 게임 데이타 저장용 클래스
     public int StageNumber = 1; // 스테이지는 1 부터 4까지
     public int StationNumber = 1; // 스테이션은 10까지만
     public int puzzle4Index = 0;
-    public int[] CharacterNumber = new int[4];
-    public int[] IllustrationNumber = new int[4];
-    public int[] NumberOfIllustration = new int[10];
     public float bgmVol = 1;
     public float effectVol = 1;
     public int isTutorial = 1;
     public int numberOfRenew = 0;
     public float clearTime = 0.0f;
     public int knn = 4;
+
+    public int seceret = 1;
 }

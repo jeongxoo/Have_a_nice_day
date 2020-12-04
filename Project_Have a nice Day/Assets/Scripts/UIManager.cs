@@ -31,7 +31,11 @@ public class UIManager : MonoBehaviour
 
     public GameObject[] position; // 현재 위치를 나타내는 이미지들
 
+    //public Text jsonLoad;
+
     #endregion 필요
+
+   
 
     // Main Scene UI
     #region Main_Scene_UI
@@ -78,6 +82,8 @@ public class UIManager : MonoBehaviour
     {
         miniMapText.text = "Episode : " + GameManager.Instance.gameData.StationNumber + "\n"
             + "Stage : " + GameManager.Instance.gameData.StageNumber;
+
+        //jsonLoad.gameObject.GetComponent<Text>().text = "제발 나와라" + GameManager.Instance.gameData.isTutorial;
     }
 
 

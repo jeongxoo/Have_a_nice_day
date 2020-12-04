@@ -8,8 +8,6 @@ public class CollectionScript : MonoBehaviour
 {
     public Image page1;
 
-    public List<GameObject> buttons;
-    public List<GameObject> locks;
 
     public Button[] charButtons = new Button[4];
     public Image[] charPanel = new Image[4];
@@ -18,6 +16,11 @@ public class CollectionScript : MonoBehaviour
     public int charKey;
     public int currentKey;
 
+    public Button[] studentIll;
+    public Sprite[] studentIllSprite;
+    public Image[] locks;
+
+
     public Image CloseupPanel;
     public Image CloseupImage;
 
@@ -25,9 +28,6 @@ public class CollectionScript : MonoBehaviour
     {
         charKey = 0;
         currentKey = 0;
-
-        buttons = new List<GameObject>();
-        locks = new List<GameObject>();
         
         if (SceneManager.GetActiveScene().name == "Collection")
         {
@@ -40,12 +40,13 @@ public class CollectionScript : MonoBehaviour
 
     void Start()
     {
+        StudentImage();
         page1.gameObject.SetActive(true);
-        buttons.AddRange(GameObject.FindGameObjectsWithTag("student"));
-        locks.AddRange(GameObject.FindGameObjectsWithTag("studentLock"));
+        //buttons.AddRange(GameObject.FindGameObjectsWithTag("student"));
+        //locks.AddRange(GameObject.FindGameObjectsWithTag("studentLock"));
         for(int i = 1; i < GameManager.Instance.gameData.StationNumber; i++)
         {
-            buttons[i - 1].GetComponent<Button>().interactable = true;
+            studentIll[i - 1].GetComponent<Button>().interactable = true;
             locks[i - 1].gameObject.SetActive(false);
         }
     }
@@ -98,5 +99,13 @@ public class CollectionScript : MonoBehaviour
     public void IllustButtonClick()
     {
 
+    }
+
+    public void StudentImage()
+    {
+        for (int i = 0; i < studentIll.Length; i++)
+        {
+            studentIll[i].image.sprite = studentIllSprite[i];
+        }
     }
 }
