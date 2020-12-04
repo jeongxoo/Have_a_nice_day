@@ -128,6 +128,13 @@ public class UIManager : MonoBehaviour
 
     public void ResetButton()
     {
-        GameManager.Instance.ResetGameData();
+        GameManager.Instance.gameData.StationNumber = 1;
+        GameManager.Instance.gameData.StageNumber = 1;
+        GameManager.Instance.gameData.puzzle4Index = 0;
+        GameManager.Instance.gameData.isTutorial = 1;
+        GameManager.Instance.gameData.numberOfRenew = 0;
+        GameManager.Instance.gameData.knn = 4;
+        GameManager.Instance.gameData.seceret = 1;
+        GameManager.Instance.SaveGameDataToJson();
     }
 }

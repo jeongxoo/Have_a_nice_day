@@ -12,6 +12,8 @@ public class TitleScripts : MonoBehaviour
     public Image startButton;
     public Image bridge;
     public Image train;
+    public Image reset;
+
     private float easing = 7.0f;
     private float s_easing = 70.0f;
     float time = 0;
@@ -72,8 +74,16 @@ public class TitleScripts : MonoBehaviour
             yield return null;
         }
         yield return null;
-        startButton.gameObject.SetActive(true);
-        StartCoroutine(FadeFlow(startButton, F_time2));
+        if(GameManager.Instance.gameData.seceret == 1)
+        {
+            reset.gameObject.SetActive(true);
+            StartCoroutine(FadeFlow(reset, F_time2));
+        }
+        else
+        {
+            startButton.gameObject.SetActive(true);
+            StartCoroutine(FadeFlow(startButton, F_time2));
+        }
     }
 
     IEnumerator MoveSubway(Vector3 startPos, Vector3 stopPos, float seconds, Image sub)
