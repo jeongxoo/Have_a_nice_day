@@ -3,7 +3,7 @@
 
 ### 게임 타이틀
 
-![KakaoTalk_Photo_2020-11-25-22-05-38](https://user-images.githubusercontent.com/56291884/100359231-9c183280-303a-11eb-8579-346ed505b78f.png)
+![ddddd](https://user-images.githubusercontent.com/56291884/101168253-8203d300-367e-11eb-93a0-107a021b9ff4.png)
 
 ### 게임 개요
 2020년 예고도 없이 찾아온 코로나로 인한 우울감, 
