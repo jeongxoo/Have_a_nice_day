@@ -23,11 +23,14 @@ public class TitleScripts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         StartCoroutine(SmoothMove(title.transform.position, this.transform.position
             - new Vector3(0,-650,0), easing, title));
         //bridge.transform.position = new Vector3(950, 180, 0);
         StartCoroutine(FixBridge(bridge.transform.position, bridge.transform.position
-            - new Vector3(10, -1525, 0), easing, bridge));        
+            - new Vector3(10, -1525, 0), easing, bridge));
+        GameManager.Instance.LoadGameDataFromJson();
+
     }
 
     // Update is called once per frame
@@ -74,16 +77,10 @@ public class TitleScripts : MonoBehaviour
             yield return null;
         }
         yield return null;
-        if(GameManager.Instance.gameData.seceret == 1)
-        {
-            reset.gameObject.SetActive(true);
-            StartCoroutine(FadeFlow(reset, F_time2));
-        }
-        else
-        {
-            startButton.gameObject.SetActive(true);
-            StartCoroutine(FadeFlow(startButton, F_time2));
-        }
+
+        startButton.gameObject.SetActive(true);
+        StartCoroutine(FadeFlow(startButton, F_time2));
+
     }
 
     IEnumerator MoveSubway(Vector3 startPos, Vector3 stopPos, float seconds, Image sub)

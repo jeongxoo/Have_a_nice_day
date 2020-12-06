@@ -10,8 +10,7 @@ public class LoadSceneManager : MonoBehaviour
     public void Awake() // start로 노래를 틀기전에 먼저 현재 씬의 이름을 반환받음
     {
         currentSceneName = SceneManager.GetActiveScene().name; // 현재씬의 이름을 저장
-        Debug.Log("-------------------------------------------");
-        Debug.Log("You are in the " + currentSceneName + " now ");
+        //Debug.Log("You are in the " + currentSceneName + " now ");
     }
 
     public void Start()
@@ -79,12 +78,12 @@ public class LoadSceneManager : MonoBehaviour
 
     public void FirstTitleToMain()
     {
+        GameManager.Instance.ResetGameData();
         SceneManager.LoadScene("MainGameScene");
         AudioManager.instance.PlayButton1();
         Map.LoadMap4();
         Map.LoadMap6();
         Map.LoadMap8();
-        GameManager.Instance.ResetGameData();
     }
 }
 

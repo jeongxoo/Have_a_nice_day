@@ -80,10 +80,7 @@ public class UIManager : MonoBehaviour
 
     public void Start()
     {
-        miniMapText.text = "Episode : " + GameManager.Instance.gameData.StationNumber + "\n"
-            + "Stage : " + GameManager.Instance.gameData.StageNumber;
-
-        //jsonLoad.gameObject.GetComponent<Text>().text = "제발 나와라" + GameManager.Instance.gameData.isTutorial;
+        MiniMapAtMain();
     }
 
 
@@ -98,6 +95,19 @@ public class UIManager : MonoBehaviour
         else
         {
             GameManager.Instance.GetScore();
+            miniMapText.text = "Episode : " + GameManager.Instance.gameData.StationNumber + "\n"
+                + "Stage : " + GameManager.Instance.gameData.StageNumber;
+        }
+    }
+
+    public void MiniMapAtMain()
+    {
+        if (GameManager.Instance.gameData.StageNumber == 0)
+        {
+            miniMapText.text = "TUTORIAL!!!!!";
+        }
+        else
+        {
             miniMapText.text = "Episode : " + GameManager.Instance.gameData.StationNumber + "\n"
                 + "Stage : " + GameManager.Instance.gameData.StageNumber;
         }
@@ -128,13 +138,6 @@ public class UIManager : MonoBehaviour
 
     public void ResetButton()
     {
-        GameManager.Instance.gameData.StationNumber = 1;
-        GameManager.Instance.gameData.StageNumber = 1;
-        GameManager.Instance.gameData.puzzle4Index = 0;
-        GameManager.Instance.gameData.isTutorial = 1;
-        GameManager.Instance.gameData.numberOfRenew = 0;
-        GameManager.Instance.gameData.knn = 4;
-        GameManager.Instance.gameData.seceret = 1;
-        GameManager.Instance.SaveGameDataToJson();
+        GameManager.Instance.ResetGameData();
     }
 }

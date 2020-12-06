@@ -76,7 +76,7 @@ public class AudioManager : MonoBehaviour
                     if (!audioSourceEffects[j].isPlaying) // 재생중인 소스가 없다면 참, 있다면 거짓
                     {
                         //playingSoundName[j] = effectSounds[j].name;
-                        Debug.Log("start play se");
+                        //Debug.Log("start play se");
                         audioSourceEffects[j].clip = effectSounds[i].clip;
                         audioSourceEffects[j].Play();
                         return;
@@ -119,15 +119,15 @@ public class AudioManager : MonoBehaviour
                 {
                     if (playingBGMName == _name) // 재생중인 노래가 있다면 재생중인 노래의 이름과 입력한 노래의 이름을 비교 / 같으면 참, 다르면 거짓
                     {
-                        Debug.Log("same song is playing"); // 두 제목이 같다면 같은노래를 재생중이라는 문구 출력 후 종료
-                        Debug.Log("Song name : " + playingBGMName);
+                        //Debug.Log("same song is playing"); // 두 제목이 같다면 같은노래를 재생중이라는 문구 출력 후 종료
+                        //Debug.Log("Song name : " + playingBGMName);
                         return;
                     }
                     else
                     {
-                        Debug.Log("change song"); // 두 제목이 다르다면 재생중이었던 노래를 종료후 새로 입력받은 이름에 해당하는 노래를 재생을 시작
+                        //Debug.Log("change song"); // 두 제목이 다르다면 재생중이었던 노래를 종료후 새로 입력받은 이름에 해당하는 노래를 재생을 시작
                         playingBGMName = bgmSounds[i].name;
-                        Debug.Log("Song name : " + playingBGMName);
+                        //Debug.Log("Song name : " + playingBGMName);
                         audioSourceBGM.Stop();
                         audioSourceBGM.clip = bgmSounds[i].clip;
                         audioSourceBGM.Play();
@@ -139,9 +139,9 @@ public class AudioManager : MonoBehaviour
                 }
                 else // 아무 음악도 재생중이지 않다면 입력받은 이름을 가진 오디오 클립을 재생
                 {
-                    Debug.Log("start playing song");
+                    //Debug.Log("start playing song");
                     playingBGMName = bgmSounds[i].name;
-                    Debug.Log("Song name : " + playingBGMName);
+                    //Debug.Log("Song name : " + playingBGMName);
                     audioSourceBGM.clip = bgmSounds[i].clip;
                     audioSourceBGM.Play();
                     return;

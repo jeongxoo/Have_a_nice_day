@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public GameData gameData;
     public AudioManager audioManager;
 
+    public int preparedEpisode;
+    public int preparedStage;
+
     // 게임매니저
     #region 싱글톤(게임매니저)
     private void Awake() // 이거는 게임매니저 싱글톤 코드
@@ -37,19 +40,6 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            /*if(instance == null)
-            {
-                var obj = FindObjectOfType<GameManager>();
-                if(obj != null)
-                {
-                    instance = obj;
-                }
-                else
-                {
-                    var newobj = new GameObject().AddComponent<GameManager>();
-                    instance = newobj;
-                }
-            }*/
             return instance;
         }
     }
@@ -63,6 +53,9 @@ public class GameManager : MonoBehaviour
 
         BgmVolumeControll(gameData.bgmVol);
         EffectVolumeControll(gameData.effectVol);
+
+        preparedEpisode = 4;
+        preparedStage = 9;
     }
 
     // JSON 데이터 save&load
@@ -88,28 +81,28 @@ public class GameManager : MonoBehaviour
     #endregion JSON
 
 
-    // 임시로 사용할 역과 스테이지 관련 변수와 함수들
-    #region 현재 게임 스테이지 정보를 담은 임시용
-
-
+    #region 현재 게임 스테이지 정보
     public void GetScore()
     {
         LoadGameDataFromJson();
 
-        if (gameData.StationNumber <= 4 && gameData.StageNumber < 9) // Station은 4이하, Stage는 9미만이면 Stage만 1 증가하고 저장!!
+        if (gameData.StationNumber <= preparedEpisode && gameData.StageNumber < preparedStage) // Station은 4이하, Stage는 9미만이면 Stage만 1 증가하고 저장!!
         {
             gameData.StageNumber += 1;
             gameData.puzzle4Index += 1;
             SaveGameDataToJson();
 
             Debug.Log(" 다음 스테이지로 이동합니다. 현재 " + gameData.StationNumber
-                + " 번째 역의 " + gameData.StageNumber + "스테이지 입니다."); // 출력한번 해주고
+                + " 번째 역의 " + gameData.StageNumber + "스테이지 입니다."); 
         }
-        else if (gameData.StationNumber <= 4 && gameData.StageNumber == 9) // Station 4이하, Stage == 10일때
+        else if (gameData.StationNumber <= preparedEpisode && gameData.StageNumber == preparedStage) 
         {
-            if (gameData.StationNumber == 4) // Station이 10이면 게임 완전히 클리어
+            if (gameData.StationNumber == preparedEpisode) // 현재 준비된 에피소드는 4개
             {
-                Debug.Log("ALL STATION CLEAR!!");
+                Debug.Log("Waiting for next update!");
+                gameData.StationNumber += 1;
+                gameData.StageNumber = 1;
+                SaveGameDataToJson();
                 return;
             }
             else // 게임 클리어가 아니라면 Station은 1 증가하고 Stage는 1로 초기화!!
@@ -120,7 +113,7 @@ public class GameManager : MonoBehaviour
                 SaveGameDataToJson();
 
                 Debug.Log(" 모든 스테이지 클리어 다음 역인 " + gameData.StationNumber
-                    + " 번째 역의 " + gameData.StageNumber + "스테이지로 이동합니다."); // 출력한번 해주고
+                    + " 번째 역의 " + gameData.StageNumber + "스테이지로 이동합니다.");
             }
         }
     }
@@ -146,11 +139,14 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameData() // Station이랑 Stage초기화 할 때 쓰는 함수~
     {
+        gameData.StageNumber = 0;
         gameData.StationNumber = 1;
-        gameData.StageNumber = 1;
         gameData.puzzle4Index = 0;
+        gameData.bgmVol = 1;
+        gameData.effectVol = 1;
         gameData.isTutorial = 1;
         gameData.numberOfRenew = 0;
+        gameData.updatedBestLabelInGame = 0;
         gameData.knn = 4;
         gameData.seceret = 0;
         SaveGameDataToJson();
@@ -161,15 +157,15 @@ public class GameManager : MonoBehaviour
 [System.Serializable]
 public class GameData // 게임 데이타 저장용 클래스 
 {
-    public int StageNumber = 1; // 스테이지는 1 부터 4까지
-    public int StationNumber = 1; // 스테이션은 10까지만
+    public int StageNumber = 0; 
+    public int StationNumber = 1; 
     public int puzzle4Index = 0;
     public float bgmVol = 1;
     public float effectVol = 1;
     public int isTutorial = 1;
     public int numberOfRenew = 0;
     public float clearTime = 0.0f;
+    public float updatedBestLabelInGame = 0;
     public int knn = 4;
-
     public int seceret = 1;
 }

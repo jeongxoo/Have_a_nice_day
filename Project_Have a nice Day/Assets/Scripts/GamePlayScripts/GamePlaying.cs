@@ -15,6 +15,7 @@ public class GamePlaying : MonoBehaviour
 
     int max;
 
+
     public void Reset()
     {
         for (int i = 0; i < listArrayScript.Count; i++)
@@ -152,11 +153,8 @@ public class GamePlaying : MonoBehaviour
         {
             isGameOver = true;
             Debug.Log("WIN!!");
-            MainCanvas.Main.wonPanel.gameObject.SetActive(true);
             MainCanvas.Main.bar.StopTimer();
             MainCanvas.Main.UnLockILL();
-            GameManager.Instance.GetScore();
-            MainCanvas.Main.RenewTest();
 
             if (GameManager.Instance.gameData.isTutorial == 1)
             {
@@ -165,10 +163,17 @@ public class GamePlaying : MonoBehaviour
             }
             else
             {
+                GameManager.Instance.gameData.numberOfRenew = MainCanvas.Main.ingameScript.renewNumber;
+                GameManager.Instance.gameData.clearTime = MainCanvas.Main.ingameScript.cleartime;
                 GameManager.Instance.gameData.puzzle4Index += 1;
             }
-
             GameManager.Instance.SaveGameDataToJson();
+            GameManager.Instance.GetScore();
+            MainCanvas.Main.wonPanel.gameObject.SetActive(true);
+            MainCanvas.Main.RenewTest();
+
+
+
         }
     }
 }
