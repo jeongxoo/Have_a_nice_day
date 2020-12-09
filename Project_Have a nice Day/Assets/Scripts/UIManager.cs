@@ -31,6 +31,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject[] position; // 현재 위치를 나타내는 이미지들
 
+    public Image startImage;
+
     //public Text jsonLoad;
 
     #endregion 필요
@@ -74,6 +76,11 @@ public class UIManager : MonoBehaviour
     {
         pop_Illustration.gameObject.SetActive(false); // 일러스트 팝업 캔버스 비활성화
         canvasGroup.interactable = true; // 기존 ui그룹의 상호작용 활성화
+    }
+
+    public void StartGame()
+    {
+        startImage.gameObject.SetActive(false);
     }
 
     #endregion Main_Scene_UI

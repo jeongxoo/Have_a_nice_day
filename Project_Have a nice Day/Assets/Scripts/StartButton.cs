@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StartButton : MonoBehaviour
 {
 
-    public Button start;
+    public Image startImage;
     // Start is called before the first frame update
 
     void Start()
@@ -15,11 +15,11 @@ public class StartButton : MonoBehaviour
 
         if (GameManager.Instance.gameData.seceret == 1)
         {
-            start.gameObject.SetActive(true);
+            startImage.gameObject.SetActive(true);
         }
         else
         {
-            start.gameObject.SetActive(false);
+            startImage.gameObject.SetActive(false);
         }
     }
 

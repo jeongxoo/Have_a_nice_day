@@ -155,6 +155,7 @@ public class GamePlaying : MonoBehaviour
             Debug.Log("WIN!!");
             MainCanvas.Main.bar.StopTimer();
             MainCanvas.Main.UnLockILL();
+            GameManager.Instance.GetScore();
 
             if (GameManager.Instance.gameData.isTutorial == 1)
             {
@@ -168,7 +169,6 @@ public class GamePlaying : MonoBehaviour
                 GameManager.Instance.gameData.puzzle4Index += 1;
             }
             GameManager.Instance.SaveGameDataToJson();
-            GameManager.Instance.GetScore();
             MainCanvas.Main.wonPanel.gameObject.SetActive(true);
             MainCanvas.Main.RenewTest();
 

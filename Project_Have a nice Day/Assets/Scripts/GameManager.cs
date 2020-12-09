@@ -66,14 +66,15 @@ public class GameManager : MonoBehaviour
     public void SaveGameDataToJson() // 현재 GameData를 JSON파일로 저장해주는 함수
     {
         string jsonData = JsonUtility.ToJson(gameData, true);
-        string path = Path.Combine(Application.persistentDataPath, "GameData.json");
+        string path = Path.Combine(Application.dataPath, "GameData.json");
         File.WriteAllText(path, jsonData);
     }
 
     // 데이터 로드 함수
+    [ContextMenu("From Json Data")]
     public void LoadGameDataFromJson() // JSON파일의 정보를 현재 GameData로 불러오는 함수
     {
-        string path = Path.Combine(Application.persistentDataPath, "GameData.json");
+        string path = Path.Combine(Application.dataPath, "GameData.json");
         string jsonData = File.ReadAllText(path);
         gameData = JsonUtility.FromJson<GameData>(jsonData);
     }
@@ -152,6 +153,20 @@ public class GameManager : MonoBehaviour
         SaveGameDataToJson();
     }
 
+    public void ResetGameData2() // Station이랑 Stage초기화 할 때 쓰는 함수~
+    {
+        gameData.StageNumber = 0;
+        gameData.StationNumber = 1;
+        gameData.puzzle4Index = 0;
+        gameData.bgmVol = 1;
+        gameData.effectVol = 1;
+        gameData.isTutorial = 1;
+        gameData.numberOfRenew = 0;
+        gameData.updatedBestLabelInGame = 0;
+        gameData.knn = 4;
+        gameData.seceret = 1;
+        SaveGameDataToJson();
+    }
 }
 
 [System.Serializable]

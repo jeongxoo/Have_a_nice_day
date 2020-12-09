@@ -78,7 +78,7 @@ public class LoadSceneManager : MonoBehaviour
 
     public void FirstTitleToMain()
     {
-        GameManager.Instance.ResetGameData();
+        GameManager.Instance.ResetGameData2();
         SceneManager.LoadScene("MainGameScene");
         AudioManager.instance.PlayButton1();
         Map.LoadMap4();

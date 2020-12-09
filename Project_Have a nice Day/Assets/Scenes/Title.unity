@@ -152,15 +152,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData:
     StageNumber: 1
-    StationNumber: 1
-    puzzle4Index: 0
+    StationNumber: 0
+    puzzle4Index: 1
     bgmVol: 1
     effectVol: 1
     isTutorial: 1
     numberOfRenew: 0
     clearTime: 0
     updatedBestLabelInGame: 0
-    knn: 0
+    knn: 4
     seceret: 1
   audioManager: {fileID: 827923970}
   preparedEpisode: 0
@@ -1504,10 +1504,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1808292894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb365217ad342414a9749ca8de1fa434, type: 3}
+  m_Script: {fileID: 11500000, guid: 1be5ad9548cd345619d52b779936b80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {fileID: 134693984}
+  reset: {fileID: 134693984}
 --- !u!1 &1994509857
 GameObject:
   m_ObjectHideFlags: 0

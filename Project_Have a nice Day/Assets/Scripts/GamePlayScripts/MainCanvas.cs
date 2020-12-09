@@ -78,11 +78,13 @@ public class MainCanvas : MonoBehaviour
 
     public void Replay()
     {
+        GameManager.Instance.SaveGameDataToJson();
         SceneManager.LoadScene("GamePlay");
     }
 
     public void GoHome()
     {
+        GameManager.Instance.SaveGameDataToJson();
         SceneManager.LoadScene("MainGameScene");
     }
 
