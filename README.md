@@ -35,5 +35,5 @@
 ### 데모 영상
 https://youtu.be/OUN0gW4TZmY
 
-### 게임 실행 파일 링크 (윈도우 실행 가능)
-https://drive.google.com/file/d/1wfEkag5DLLUADz2RI9KrMnw5c5t7qf5V/view?usp=sharing
+### 게임 실행 파일 링크 (윈도우 실행 가능 / 링크 수정)
+https://drive.google.com/file/d/1DkzJUFufVpOI2mL0Ks3PUDW-bsAljED0/view?usp=sharing
