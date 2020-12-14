@@ -28,9 +28,8 @@
 - 캐릭터의 일상을 따라 진행되는 게임의 진척도를 표현하는 "지하철 노선도"
 - 수집한 일러스와 스토리를 확인할 수 있는 "컬렉션 기능"
 
-### 기획서
-
-[예선_게임개발부문_NiceDay_PPT.pdf](https://github.com/jeongxoo/Have_a_nice_day/files/5603399/_._NiceDay_PPT.pdf)
+### 기획서(최종 발표 자료)
+https://drive.google.com/file/d/1R7UyEv19S_uS45VzbtxHCDW9LnVW59lO/view?usp=sharing
 
 ### 데모 영상
 https://youtu.be/OUN0gW4TZmY
