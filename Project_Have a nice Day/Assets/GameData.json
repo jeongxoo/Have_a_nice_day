@@ -1,7 +1,7 @@
 {
-    "StageNumber": 1,
-    "StationNumber": 0,
-    "puzzle4Index": 1,
+    "StageNumber": 0,
+    "StationNumber": 1,
+    "puzzle4Index": 0,
     "bgmVol": 1.0,
     "effectVol": 1.0,
     "isTutorial": 1,
