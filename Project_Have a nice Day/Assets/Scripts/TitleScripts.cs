@@ -27,8 +27,8 @@ public class TitleScripts : MonoBehaviour
         StartCoroutine(SmoothMove(title.transform.position, this.transform.position
             - new Vector3(0,-650,0), easing, title));
         //bridge.transform.position = new Vector3(950, 180, 0);
-        StartCoroutine(FixBridge(bridge.transform.position, bridge.transform.position
-            - new Vector3(10, -1525, 0), easing, bridge));
+        //StartCoroutine(FixBridge(bridge.transform.position, bridge.transform.position
+          //  - new Vector3(10, -1525, 0), easing, bridge));
         GameManager.Instance.LoadGameDataFromJson();
 
     }
@@ -49,8 +49,8 @@ public class TitleScripts : MonoBehaviour
             yield return null;
         }        
         StartCoroutine(FadeFlow(gameLogo, F_time1));
-        StartCoroutine(MoveSubway(subway.transform.position, subway.transform.position - new Vector3(-4000,0,0), s_easing, subway));
-        StartCoroutine(MoveTrain(train.transform.position, train.transform.position - new Vector3(1000, 0, 0), easing, train));
+        //StartCoroutine(MoveSubway(subway.transform.position, subway.transform.position - new Vector3(-4000,0,0), s_easing, subway));
+        //StartCoroutine(MoveTrain(train.transform.position, train.transform.position - new Vector3(1000, 0, 0), easing, train));
     }
 
     IEnumerator FixBridge(Vector3 startPos, Vector3 stopPos, float seconds, Image birdge)
