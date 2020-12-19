@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
     public void SaveGameDataToJson() // 현재 GameData를 JSON파일로 저장해주는 함수
     {
         string jsonData = JsonUtility.ToJson(gameData, true);
-        string path = Path.Combine(Application.dataPath, "GameData.json");
+        string path = Path.Combine(Application.persistentDataPath, "GameData.json");
         File.WriteAllText(path, jsonData);
     }
 
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     [ContextMenu("From Json Data")]
     public void LoadGameDataFromJson() // JSON파일의 정보를 현재 GameData로 불러오는 함수
     {
-        string path = Path.Combine(Application.dataPath, "GameData.json");
+        string path = Path.Combine(Application.persistentDataPath, "GameData.json");
         string jsonData = File.ReadAllText(path);
         gameData = JsonUtility.FromJson<GameData>(jsonData);
     }
